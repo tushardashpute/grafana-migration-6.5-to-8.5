@@ -22,6 +22,9 @@ Steps
         alter table public.temp_user alter column created type varchar 250;    
         alter table public.temp_user alter column updated type varchar 250;    
 
+Also need to modify the Sequence value of temp_user_id_seq to total number of records in temp_user table.
+
+        SELECT setval('temp_user_id_seq', 21, true); # Set the number to total number of records in temp_user table
 
 6. Import the data from 6.5 RDS DB to new DB
 
